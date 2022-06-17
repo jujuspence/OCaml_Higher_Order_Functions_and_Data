@@ -1,0 +1,118 @@
+# dune build public.exe
+# OCAMLPARAM: unset
+# Workspace root: /Users/jujuspence/cmsc330spring22/project2b
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/7b/495yrkn90q75vwsnjphrjzw00000gn/T/dune283ef7.output 2> /dev/null
+# Auto-detected concurrency: 8
+# disable binary cache
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/7b/495yrkn90q75vwsnjphrjzw00000gn/T/dune9b3e4a.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "/Users/jujuspence/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/usr/local/bin"
+#  ; ocaml = Ok External "/Users/jujuspence/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/usr/local/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/local/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/local/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/local/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/jujuspence/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/local/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/jujuspence/cmsc330spring22/project2b"
+#        ; "INSIDE_DUNE" :
+#            "/Users/jujuspence/cmsc330spring22/project2b/_build/default"
+#        ; "MANPATH" :
+#            "/Users/jujuspence/cmsc330spring22/project2b/_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/jujuspence/cmsc330spring22/project2b/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/jujuspence/cmsc330spring22/project2b/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/jujuspence/cmsc330spring22/project2b/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/Users/jujuspence/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0"
+#      ; standard_library_default = "/usr/local/lib/ocaml"
+#      ; standard_library = "/usr/local/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "clang"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin20.3.0"
+#      ; target = "x86_64-apple-darwin20.3.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/data.ml) > _build/default/src/.p2b.objs/data.ml.d
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -27-39-33-32 -g -I src/.p2b.objs/byte -I src/.p2b.objs/native -I /Users/jujuspence/.opam/default/lib/bytes -I /Users/jujuspence/.opam/default/lib/oUnit -I /Users/jujuspence/.opam/default/lib/ounit2 -I /Users/jujuspence/.opam/default/lib/ounit2/advanced -I /Users/jujuspence/.opam/default/lib/stdlib-shims -intf-suffix .ml -no-alias-deps -opaque -open P2b -o src/.p2b.objs/native/p2b__Data.cmx -c -impl src/data.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -27-39-33-32 -g -a -o src/p2b.cmxa src/.p2b.objs/native/p2b.cmx src/.p2b.objs/native/p2b__Funs.cmx src/.p2b.objs/native/p2b__Higher.cmx src/.p2b.objs/native/p2b__Data.cmx)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I test/public/.public.eobjs/byte -I /Users/jujuspence/.opam/default/lib/bytes -I /Users/jujuspence/.opam/default/lib/oUnit -I /Users/jujuspence/.opam/default/lib/ounit2 -I /Users/jujuspence/.opam/default/lib/ounit2/advanced -I /Users/jujuspence/.opam/default/lib/stdlib-shims -I src/.p2b.objs/byte -I test/.testUtils.objs/byte -no-alias-deps -opaque -o test/public/.public.eobjs/byte/dune__exe__Public.cmo -c -impl test/public/public.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I test/public/.public.eobjs/byte -I test/public/.public.eobjs/native -I /Users/jujuspence/.opam/default/lib/bytes -I /Users/jujuspence/.opam/default/lib/oUnit -I /Users/jujuspence/.opam/default/lib/ounit2 -I /Users/jujuspence/.opam/default/lib/ounit2/advanced -I /Users/jujuspence/.opam/default/lib/stdlib-shims -I src/.p2b.objs/byte -I src/.p2b.objs/native -I test/.testUtils.objs/byte -I test/.testUtils.objs/native -intf-suffix .ml -no-alias-deps -opaque -o test/public/.public.eobjs/native/dune__exe__Public.cmx -c -impl test/public/public.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o test/public/public.exe /usr/local/lib/ocaml/unix.cmxa -I /usr/local/lib/ocaml /Users/jujuspence/.opam/default/lib/stdlib-shims/stdlib_shims.cmxa /Users/jujuspence/.opam/default/lib/ounit2/advanced/oUnitAdvanced.cmxa /Users/jujuspence/.opam/default/lib/ounit2/oUnit.cmxa src/p2b.cmxa test/testUtils.cmxa test/public/.public.eobjs/native/dune__exe__Public.cmx)
